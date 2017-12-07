@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		552E4D301FD8C5250074AFFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D2F1FD8C5250074AFFD /* AppDelegate.swift */; };
+		552E4D321FD8C5250074AFFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D311FD8C5250074AFFD /* ViewController.swift */; };
+		552E4D351FD8C5250074AFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552E4D331FD8C5250074AFFD /* Main.storyboard */; };
+		552E4D371FD8C5250074AFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552E4D361FD8C5250074AFFD /* Assets.xcassets */; };
+		552E4D3A1FD8C5250074AFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552E4D381FD8C5250074AFFD /* LaunchScreen.storyboard */; };
+		552E4D521FD8CB150074AFFD /* FFTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D431FD8CB150074AFFD /* FFTHelper.m */; };
+		552E4D531FD8CB150074AFFD /* DataBufferBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D481FD8CB150074AFFD /* DataBufferBlock.m */; };
+		552E4D541FD8CB150074AFFD /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D4A1FD8CB150074AFFD /* Novocaine.m */; };
+		552E4D551FD8CB150074AFFD /* AudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D4C1FD8CB150074AFFD /* AudioFileReader.m */; };
+		552E4D561FD8CB150074AFFD /* CubicSpline.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D4D1FD8CB150074AFFD /* CubicSpline.m */; };
+		552E4D571FD8CB150074AFFD /* PeakFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D4F1FD8CB150074AFFD /* PeakFinder.m */; };
+		552E4D581FD8CB150074AFFD /* CircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D501FD8CB150074AFFD /* CircularBuffer.m */; };
+		552E4D591FD8CB150074AFFD /* BufferedOverlapQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D511FD8CB150074AFFD /* BufferedOverlapQueue.m */; };
+		552E4D5B1FD8D15B0074AFFD /* AudioProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D5A1FD8D15B0074AFFD /* AudioProcessor.m */; };
+		552E4D601FD92F900074AFFD /* libmfcc.c in Sources */ = {isa = PBXBuildFile; fileRef = 552E4D5F1FD92F900074AFFD /* libmfcc.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		552E4D2C1FD8C5250074AFFD /* ColorWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		552E4D2F1FD8C5250074AFFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		552E4D311FD8C5250074AFFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		552E4D341FD8C5250074AFFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		552E4D361FD8C5250074AFFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		552E4D391FD8C5250074AFFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		552E4D3B1FD8C5250074AFFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552E4D421FD8CB150074AFFD /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		552E4D431FD8CB150074AFFD /* FFTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTHelper.m; sourceTree = "<group>"; };
+		552E4D441FD8CB150074AFFD /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		552E4D451FD8CB150074AFFD /* CubicSpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicSpline.h; sourceTree = "<group>"; };
+		552E4D461FD8CB150074AFFD /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
+		552E4D471FD8CB150074AFFD /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		552E4D481FD8CB150074AFFD /* DataBufferBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBufferBlock.m; sourceTree = "<group>"; };
+		552E4D491FD8CB150074AFFD /* BufferedOverlapQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferedOverlapQueue.h; sourceTree = "<group>"; };
+		552E4D4A1FD8CB150074AFFD /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		552E4D4B1FD8CB150074AFFD /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		552E4D4C1FD8CB150074AFFD /* AudioFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileReader.m; sourceTree = "<group>"; };
+		552E4D4D1FD8CB150074AFFD /* CubicSpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicSpline.m; sourceTree = "<group>"; };
+		552E4D4E1FD8CB150074AFFD /* DataBufferBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBufferBlock.h; sourceTree = "<group>"; };
+		552E4D4F1FD8CB150074AFFD /* PeakFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeakFinder.m; sourceTree = "<group>"; };
+		552E4D501FD8CB150074AFFD /* CircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularBuffer.m; sourceTree = "<group>"; };
+		552E4D511FD8CB150074AFFD /* BufferedOverlapQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferedOverlapQueue.m; sourceTree = "<group>"; };
+		552E4D5A1FD8D15B0074AFFD /* AudioProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioProcessor.m; sourceTree = "<group>"; };
+		552E4D5C1FD8D1740074AFFD /* AudioProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioProcessor.h; sourceTree = "<group>"; };
+		552E4D5D1FD8F3050074AFFD /* ColorWave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ColorWave-Bridging-Header.h"; sourceTree = "<group>"; };
+		552E4D5E1FD92F900074AFFD /* libmfcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmfcc.h; sourceTree = "<group>"; };
+		552E4D5F1FD92F900074AFFD /* libmfcc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libmfcc.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		552E4D291FD8C5250074AFFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		552E4D231FD8C5250074AFFD = {
+			isa = PBXGroup;
+			children = (
+				552E4D411FD8CB150074AFFD /* AudioDSPUtils */,
+				552E4D2E1FD8C5250074AFFD /* ColorWave */,
+				552E4D2D1FD8C5250074AFFD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		552E4D2D1FD8C5250074AFFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				552E4D2C1FD8C5250074AFFD /* ColorWave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		552E4D2E1FD8C5250074AFFD /* ColorWave */ = {
+			isa = PBXGroup;
+			children = (
+				552E4D2F1FD8C5250074AFFD /* AppDelegate.swift */,
+				552E4D311FD8C5250074AFFD /* ViewController.swift */,
+				552E4D5A1FD8D15B0074AFFD /* AudioProcessor.m */,
+				552E4D5D1FD8F3050074AFFD /* ColorWave-Bridging-Header.h */,
+				552E4D5C1FD8D1740074AFFD /* AudioProcessor.h */,
+				552E4D331FD8C5250074AFFD /* Main.storyboard */,
+				552E4D361FD8C5250074AFFD /* Assets.xcassets */,
+				552E4D381FD8C5250074AFFD /* LaunchScreen.storyboard */,
+				552E4D3B1FD8C5250074AFFD /* Info.plist */,
+			);
+			path = ColorWave;
+			sourceTree = "<group>";
+		};
+		552E4D411FD8CB150074AFFD /* AudioDSPUtils */ = {
+			isa = PBXGroup;
+			children = (
+				552E4D5F1FD92F900074AFFD /* libmfcc.c */,
+				552E4D5E1FD92F900074AFFD /* libmfcc.h */,
+				552E4D421FD8CB150074AFFD /* AudioFileReader.h */,
+				552E4D431FD8CB150074AFFD /* FFTHelper.m */,
+				552E4D441FD8CB150074AFFD /* Novocaine.h */,
+				552E4D451FD8CB150074AFFD /* CubicSpline.h */,
+				552E4D461FD8CB150074AFFD /* CircularBuffer.h */,
+				552E4D471FD8CB150074AFFD /* PeakFinder.h */,
+				552E4D481FD8CB150074AFFD /* DataBufferBlock.m */,
+				552E4D491FD8CB150074AFFD /* BufferedOverlapQueue.h */,
+				552E4D4A1FD8CB150074AFFD /* Novocaine.m */,
+				552E4D4B1FD8CB150074AFFD /* FFTHelper.h */,
+				552E4D4C1FD8CB150074AFFD /* AudioFileReader.m */,
+				552E4D4D1FD8CB150074AFFD /* CubicSpline.m */,
+				552E4D4E1FD8CB150074AFFD /* DataBufferBlock.h */,
+				552E4D4F1FD8CB150074AFFD /* PeakFinder.m */,
+				552E4D501FD8CB150074AFFD /* CircularBuffer.m */,
+				552E4D511FD8CB150074AFFD /* BufferedOverlapQueue.m */,
+			);
+			path = AudioDSPUtils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		552E4D2B1FD8C5250074AFFD /* ColorWave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 552E4D3E1FD8C5250074AFFD /* Build configuration list for PBXNativeTarget "ColorWave" */;
+			buildPhases = (
+				552E4D281FD8C5250074AFFD /* Sources */,
+				552E4D291FD8C5250074AFFD /* Frameworks */,
+				552E4D2A1FD8C5250074AFFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorWave;
+			productName = ColorWave;
+			productReference = 552E4D2C1FD8C5250074AFFD /* ColorWave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		552E4D241FD8C5250074AFFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = SMU.cse5323;
+				TargetAttributes = {
+					552E4D2B1FD8C5250074AFFD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 552E4D271FD8C5250074AFFD /* Build configuration list for PBXProject "ColorWave" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 552E4D231FD8C5250074AFFD;
+			productRefGroup = 552E4D2D1FD8C5250074AFFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				552E4D2B1FD8C5250074AFFD /* ColorWave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		552E4D2A1FD8C5250074AFFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552E4D3A1FD8C5250074AFFD /* LaunchScreen.storyboard in Resources */,
+				552E4D371FD8C5250074AFFD /* Assets.xcassets in Resources */,
+				552E4D351FD8C5250074AFFD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		552E4D281FD8C5250074AFFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552E4D591FD8CB150074AFFD /* BufferedOverlapQueue.m in Sources */,
+				552E4D581FD8CB150074AFFD /* CircularBuffer.m in Sources */,
+				552E4D601FD92F900074AFFD /* libmfcc.c in Sources */,
+				552E4D571FD8CB150074AFFD /* PeakFinder.m in Sources */,
+				552E4D321FD8C5250074AFFD /* ViewController.swift in Sources */,
+				552E4D551FD8CB150074AFFD /* AudioFileReader.m in Sources */,
+				552E4D301FD8C5250074AFFD /* AppDelegate.swift in Sources */,
+				552E4D521FD8CB150074AFFD /* FFTHelper.m in Sources */,
+				552E4D5B1FD8D15B0074AFFD /* AudioProcessor.m in Sources */,
+				552E4D531FD8CB150074AFFD /* DataBufferBlock.m in Sources */,
+				552E4D541FD8CB150074AFFD /* Novocaine.m in Sources */,
+				552E4D561FD8CB150074AFFD /* CubicSpline.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		552E4D331FD8C5250074AFFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				552E4D341FD8C5250074AFFD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		552E4D381FD8C5250074AFFD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				552E4D391FD8C5250074AFFD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		552E4D3C1FD8C5250074AFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		552E4D3D1FD8C5250074AFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		552E4D3F1FD8C5250074AFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2FF4799SW;
+				INFOPLIST_FILE = ColorWave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.cse5323.ColorWave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/oscar/Documents/School/Fall 2017/MobileSensing/projects/FinalProj/ColorWave/ColorWave/ColorWave-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		552E4D401FD8C5250074AFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2FF4799SW;
+				INFOPLIST_FILE = ColorWave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SMU.cse5323.ColorWave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/oscar/Documents/School/Fall 2017/MobileSensing/projects/FinalProj/ColorWave/ColorWave/ColorWave-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		552E4D271FD8C5250074AFFD /* Build configuration list for PBXProject "ColorWave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552E4D3C1FD8C5250074AFFD /* Debug */,
+				552E4D3D1FD8C5250074AFFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		552E4D3E1FD8C5250074AFFD /* Build configuration list for PBXNativeTarget "ColorWave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552E4D3F1FD8C5250074AFFD /* Debug */,
+				552E4D401FD8C5250074AFFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 552E4D241FD8C5250074AFFD /* Project object */;
+}
