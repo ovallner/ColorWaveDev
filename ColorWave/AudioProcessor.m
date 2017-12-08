@@ -14,7 +14,7 @@
 #import "math.h"
 #import "libmfcc.h"
 
-#define BUFFER_SIZE 2048
+#define BUFFER_SIZE 1024
 #define TIME_INTERVAL 0.05
 
 @interface AudioProcessor()
@@ -24,12 +24,40 @@
 @property (nonatomic) float *fftBassCircle;
 @property (nonatomic) int circleIndex;
 @property (nonatomic) float bassMagAvg;
+@property (nonatomic) float maxMidFreq;
+@property (nonatomic) int maxMidIndex;
+@property (nonatomic) float **mfccData;
+@property (nonatomic) int mfccIndex;
+@property (nonatomic) int midTimeChange;
+@property (strong, nonatomic) dispatch_queue_t serialQueue;
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (strong, nonatomic) CircularBuffer *buffer;
 @property (strong, nonatomic) FFTHelper *fftHelper;
 @end
 
 @implementation AudioProcessor
+
+-(float**)mfccData{
+    if(!_mfccData){
+        _mfccIndex = 0;
+        _mfccData = malloc(sizeof(float*)*30);
+        for(int i = 0; i < 30; i++){
+            _mfccData[i] = malloc(sizeof(float)*13);
+        }
+    }
+    return _mfccData;
+}
+
+-(void)insertMfcc:(float*) mfccArr{
+    self.mfccData[self.mfccIndex] = mfccArr;
+}
+
+-(dispatch_queue_t)serialQueue{
+    if(!_serialQueue){
+        _serialQueue = dispatch_queue_create("com.mfcc.queue", DISPATCH_QUEUE_SERIAL);
+    }
+    return _serialQueue;
+}
 
 -(float*)fftBassCircle {
     if(!_fftBassCircle){
@@ -95,6 +123,8 @@
 }
 */
 -(void)initialize {
+    self.midTimeChange = 0;
+    
     NSLog(@"STARTING Microphone");
     __block AudioProcessor * __weak  weakSelf = self;
     [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels){
@@ -115,9 +145,16 @@
                                    selector:@selector(takeFFT)
                                    userInfo:nil
                                     repeats:YES];
+    
+    /*[NSTimer scheduledTimerWithTimeInterval:0.33
+                                     target:self
+                                   selector:@selector(calcMFCC)
+                                   userInfo:nil
+                                    repeats:YES];*/
 }
 
--(float*) takeFFT {
+-(void) takeFFT {
+    self.midTimeChange++;
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
     
@@ -156,17 +193,38 @@
         }
         if(isLargest){
             // LUKE ADD COLOR CHANGE HERE!!!!!!!
-            NSLog(@"Total: %f", bassTotal);
+            //NSLog(@"Total: %f", bassTotal);
             //NSLog(@"Change Bass Lights!");
         }
     }
     
+    int midIndex1 = ceil(500/(self.audioManager.samplingRate/(BUFFER_SIZE)));
+    int midIndex2 = floor(2000/(self.audioManager.samplingRate/(BUFFER_SIZE)));
     
+    float maxVal = 0;
+    int maxIndex = 0;
+
     
-    return fftMagnitude;
+    for(int i = midIndex1; i < midIndex2; i++) {
+        if(fftMagnitude[i] > maxVal) {
+            maxVal = fftMagnitude[i];
+            maxIndex = i;
+        }
+    }
+    if(abs(maxIndex-self.maxMidIndex) > 15){
+        if(self.midTimeChange > (0.25/TIME_INTERVAL)){
+            self.maxMidIndex = maxIndex;
+            NSLog(@"Mid changed");
+            self.midTimeChange = 0;
+        }
+    }
+    
+    /*dispatch_async(self.serialQueue, ^{
+        [self calcMFCC];
+    });*/
 }
 
--(float*) calcMFCC {
+-(void) calcMFCC{
     
     float* arrayData = malloc(sizeof(float)*BUFFER_SIZE);
     float* fftMagnitude = malloc(sizeof(float)*BUFFER_SIZE/2);
@@ -176,12 +234,23 @@
     
     [self.fftHelper performForwardFFTWithData:arrayData
                    andCopydBMagnitudeToBuffer:fftMagnitude];
+    
     for(int i = 0; i < 13; i++){
-        mfccCoefficients[i] = GetCoefficient(fftMagnitude, 44100, 48, sizeof(float)*BUFFER_SIZE/2, i);
+        mfccCoefficients[i] = GetCoefficient(fftMagnitude, self.audioManager.samplingRate, 48, sizeof(float)*BUFFER_SIZE/2, i);
         //printf("%d: %f\n", i, mfccCoefficients[i]);
     }
-    printf("%f\n", mfccCoefficients[1]);
-    return mfccCoefficients;
+    [self insertMfcc:mfccCoefficients];
+    if(self.mfccIndex == 30){
+        NSLog(@"This is a full array of data for mfcc");
+        self.mfccIndex = 0;
+    }
+    else {
+        //NSLog(@"calc'd mfcc: %d", self.mfccIndex);
+        self.mfccIndex++;
+    }
+    
+    //printf("%f\n", mfccCoefficients[1]);
+
 }
 
 
